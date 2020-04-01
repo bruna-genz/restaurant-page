@@ -17,8 +17,7 @@ export const loadHomePage = () => {
     navbarElement = createNavbar()
     contentWrapper.appendChild(navbarElement);
 
-    presentationElement = createPresentation();
-    contentWrapper.appendChild(presentationElement);
+    renderPresentation();
     
     footerElement = createFooter();
     contentWrapper.insertAdjacentElement("afterend", footerElement);
@@ -38,20 +37,17 @@ const createNavbar = () => {
 
     for (let i = 0; i < 3; i++) {
         let li = document.createElement("li");
+        li.className = `list-${i}`;
         listItems.push(li);
         navList.appendChild(li);
     }
 
     listItems[0].textContent = "Home";
-    listItems[0].className = "active";
+    listItems[0].classList.add("active");
     listItems[1].textContent = "Menu";
     listItems[2].textContent = "Contact";
 
     return navList;
-};
-
-export const removeLogo = () => {
-    logoElement.remove();
 };
 
 const createPresentation = () => {
@@ -63,6 +59,15 @@ const createPresentation = () => {
 
     return presentationWrapper;
 } 
+
+export const renderPresentation = () => {
+    presentationElement = createPresentation();
+    contentWrapper.appendChild(presentationElement);
+}
+
+export const removePresentation = () => {
+    presentationElement.remove();
+};
 
 const createImage = () => {
     const menuImage = new Image();
