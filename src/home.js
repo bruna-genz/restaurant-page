@@ -3,9 +3,7 @@ let presentationWrapper;
 
 import restaurantImage from './assets/images/restaurant.jpg';
 
-export const setContentWrapper = (_contentWrapper) => {
-    contentWrapper = _contentWrapper;
-};
+export const setContentWrapper = _contentWrapper => contentWrapper = _contentWrapper;
 
 export const loadHomePage = () => {
     createLogo(); 

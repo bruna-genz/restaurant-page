@@ -1,9 +1,12 @@
 import './assets/styles/index.css';
-import { setContentWrapper, loadHomePage, createPresentation, removePresentation } from "./home";
+import * as Home from "./home";
+import * as Contact from "./contact";
 
-setContentWrapper(document.querySelector("#content"));
+Home.setContentWrapper(document.querySelector("#content"));
 
-loadHomePage();
+Home.loadHomePage();
+
+Contact.setContentWrapper(document.querySelector("#content"));
 
 let homeLink = document.querySelector(".list-0")
 let menuLink = document.querySelector(".list-1")
@@ -12,18 +15,21 @@ let contactLink = document.querySelector(".list-2")
 let buttons = [homeLink, menuLink, contactLink]
 
 homeLink.addEventListener('click', () => {
-    createPresentation();
+    Home.createPresentation();
+    Contact.removeContactInfo();
     activateButton(homeLink);
 })
 
 menuLink.addEventListener('click', () => {
-    removePresentation();
+    Home.removePresentation();
+    Contact.removeContactInfo();
     activateButton(menuLink);
 });
 
 contactLink.addEventListener('click', () => {
-    removePresentation();
+    Home.removePresentation();
     activateButton(contactLink);
+    Contact.createContactInfo();
 });
 
 function addActiveClass(el) {
