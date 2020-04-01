@@ -2,6 +2,7 @@ let contentWrapper;
 let logoElement;
 let navbarElement;
 let presentationElement;
+let footerElement;
 
 import restaurantImage from './assets/images/restaurant.jpg';
 
@@ -18,6 +19,9 @@ export const loadHomePage = () => {
 
     presentationElement = createPresentation();
     contentWrapper.appendChild(presentationElement);
+    
+    footerElement = createFooter();
+    contentWrapper.insertAdjacentElement("afterend", footerElement);
 };
 
 const createLogo = () => {
@@ -82,4 +86,16 @@ const createParagraphs = () => {
     paragraphList[1].textContent = "Amet duis mollit non enim Lorem fugiat irure eiusmod nisi voluptate ut ad nisi. Pariatur reprehenderit ullamco et culpa pariatur quis exercitation dolor consequat laboris commodo dolor occaecat. Voluptate dolor voluptate esse dolore sunt labore eiusmod ipsum mollit minim commodo officia. Mollit enim deserunt nisi sit."
 
     return paragraphWrapper;
+}
+
+const createFooter = () => {
+    let footer = document.createElement("footer");
+    footer.textContent = '2020 Bruna Genz';
+
+    let span = document.createElement("span");
+    span.textContent = 'Photo by Petr Sevcovic on Unsplash';
+
+    footer.appendChild(span);
+
+    return footer;
 }
