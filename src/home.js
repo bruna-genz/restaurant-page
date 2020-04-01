@@ -1,8 +1,5 @@
 let contentWrapper;
-let logoElement;
-let navbarElement;
-let presentationElement;
-let footerElement;
+let presentationWrapper;
 
 import restaurantImage from './assets/images/restaurant.jpg';
 
@@ -11,22 +8,16 @@ export const setContentWrapper = (_contentWrapper) => {
 };
 
 export const loadHomePage = () => {
-    logoElement = createLogo();
-    contentWrapper.appendChild(logoElement); 
-
-    navbarElement = createNavbar()
-    contentWrapper.appendChild(navbarElement);
-
-    renderPresentation();
-    
-    footerElement = createFooter();
-    contentWrapper.insertAdjacentElement("afterend", footerElement);
+    createLogo(); 
+    createNavbar();
+    createPresentation();
+    createFooter();
 };
 
 const createLogo = () => {
     let logoHeading = document.createElement("h1");
     logoHeading.textContent = "The Windsor's Bistro";
-    return logoHeading;
+    contentWrapper.appendChild(logoHeading)
 };
 
 const createNavbar = () => {
@@ -47,26 +38,21 @@ const createNavbar = () => {
     listItems[1].textContent = "Menu";
     listItems[2].textContent = "Contact";
 
-    return navList;
+    contentWrapper.appendChild(navList);
 };
 
-const createPresentation = () => {
-    let presentationWrapper = document.createElement("div");
+export const createPresentation = () => {
+    presentationWrapper = document.createElement("div");
     presentationWrapper.id = 'presentation';
 
     presentationWrapper.appendChild(createImage());
     presentationWrapper.appendChild(createParagraphs());
 
-    return presentationWrapper;
+    contentWrapper.appendChild(presentationWrapper);
 } 
 
-export const renderPresentation = () => {
-    presentationElement = createPresentation();
-    contentWrapper.appendChild(presentationElement);
-}
-
 export const removePresentation = () => {
-    presentationElement.remove();
+    presentationWrapper.remove();
 };
 
 const createImage = () => {
@@ -102,5 +88,5 @@ const createFooter = () => {
 
     footer.appendChild(span);
 
-    return footer;
+    contentWrapper.insertAdjacentElement("afterend", footer);
 }

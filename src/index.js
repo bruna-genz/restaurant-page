@@ -1,5 +1,5 @@
 import './assets/styles/index.css';
-import { setContentWrapper, loadHomePage, renderPresentation, removePresentation } from "./home";
+import { setContentWrapper, loadHomePage, createPresentation, removePresentation } from "./home";
 
 setContentWrapper(document.querySelector("#content"));
 
@@ -9,22 +9,21 @@ let homeLink = document.querySelector(".list-0")
 let menuLink = document.querySelector(".list-1")
 let contactLink = document.querySelector(".list-2")
 
+let buttons = [homeLink, menuLink, contactLink]
+
 homeLink.addEventListener('click', () => {
-    renderPresentation();
-    addActiveClass(homeLink);
-    removeActiveClass(menuLink, contactLink);
+    createPresentation();
+    activateButton(homeLink);
 })
 
 menuLink.addEventListener('click', () => {
     removePresentation();
-    addActiveClass(menuLink);
-    removeActiveClass(homeLink, contactLink);
+    activateButton(menuLink);
 });
 
 contactLink.addEventListener('click', () => {
     removePresentation();
-    addActiveClass(contactLink);
-    removeActiveClass(menuLink, homeLink);
+    activateButton(contactLink);
 });
 
 function addActiveClass(el) {
@@ -34,3 +33,13 @@ function addActiveClass(el) {
 function removeActiveClass(...elements) {
     elements.forEach(el => el.classList.remove("active"));
 }; 
+
+function activateButton(button) {
+    buttons.forEach(b => {
+        if (b === button) {
+            addActiveClass(b)
+        } else {
+            removeActiveClass(b)
+        }
+    })
+}
