@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap');    
 
+/******** GENERAL ********/
+
 body {
     margin: 0;
 }
@@ -17,6 +19,13 @@ h1 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 200;
     margin: 75px 0 25px 0;
+}
+
+h2 {
+    font-size: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-weight: 500;
 }
 
 #tabs {
@@ -48,8 +57,19 @@ li:hover {
     color: grey;
 }
 
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px 10px 10px;
+    border-top: rgb(221, 220, 220) 1px solid;
+    color: grey;
+}
+
+/******** HOME PAGE ********/
+
 img {
     width: 100%;
+    opacity: 0.8;
 }
 
 #description {
@@ -59,10 +79,23 @@ img {
     font-size: 20px;
 }
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 10px 10px 10px;
-    border-top: rgb(221, 220, 220) 1px solid;
-    color: grey;
+/******** CONTACT PAGE ********/
+
+#contact-image {
+    background-image: url(../images/restaurant2.jpg);
+    width: 698px;
+    height: 257px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+hr {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, white, rgb(72, 74, 75), rgb(160, 162, 163), rgb(72, 74, 75), white);
 }

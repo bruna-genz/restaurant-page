@@ -1,3 +1,6 @@
+// !when click more than one time, it repeats
+
+
 import './assets/styles/index.css';
 import * as Home from "./home";
 import * as Contact from "./contact";
