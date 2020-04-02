@@ -71,9 +71,9 @@ hr {
     width: 80%;
     margin: 10px auto;
     display: block;
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, white, rgb(72, 74, 75), rgb(160, 162, 163), rgb(72, 74, 75), white);
+    border: none !important;
+    height: 1px !important;
+    background: linear-gradient(to right, white, rgb(72, 74, 75), rgb(160, 162, 163), rgb(72, 74, 75), white) !important;
 }
 
 /******** HOME PAGE ********/
@@ -106,4 +106,14 @@ img {
 
 .class {
     width: 18rem;
+}
+
+#options-container {
+    display: flex;
+    justify-content: space-between;
+    width: 60em;
+}
+
+.card {
+    width: 33%;
 }

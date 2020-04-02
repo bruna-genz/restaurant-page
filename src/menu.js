@@ -2,7 +2,9 @@ let contentWrapper;
 let menuWrapper;
 
 import * as Common from './common';
-import restaurantImage from './assets/images/restaurant.jpg';
+import Pasta from './assets/images/pasta.jpg';
+import Ratatouille from './assets/images/ratatouille_ed.jpg';
+import Risotto from './assets/images/risotto.jpg';
 export const setContentWrapper = _contentWrapper => contentWrapper = _contentWrapper;
 
 export const createMenu = () => {
@@ -10,32 +12,38 @@ export const createMenu = () => {
 
     menuWrapper.appendChild(Common.createSeparator());
     menuWrapper.appendChild(Common.createTitle("Lunch Menu"));
-
-    createOptions().forEach(op => menuWrapper.appendChild(op));
+    menuWrapper.appendChild(createOptions());
 
     contentWrapper.appendChild(menuWrapper);
 }
 
 const createOptions = () => {
+    let optionsWrapper = document.createElement("div");
+    optionsWrapper.id = "options-container"
+
     let options = [
         {
+            img: Pasta,
             title: "Caponata pasta",
             description: "Pasta Caponata is inspired by the Sicilian dish made with chopped eggplant, olives and tomatoes in a sweet and sour sauce. It's a light an easy meal that's vegan and gluten-free!"
         },
         {
+            img: Risotto,
             title: "Seafood Risotto",
             description: "Risotto is a northern Italian rice dish cooked with broth until it reaches a creamy consistency."
         },
         {
+            img: Ratatouille,
             title: "Ratatouille",
             description: "Ratatouille is a French Provençal stewed vegetable dish, originating in Nice, and sometimes referred to as ratatouille niçoise."
         }
     ]
 
-    let optionsAr = [];
-    options.forEach((op) => optionsAr.push(createCard(restaurantImage, op.title, op.description)));
+    options.forEach((op) => {
+        optionsWrapper.appendChild(createCard(op.img, op.title, op.description))
+    });
 
-    return optionsAr;
+    return optionsWrapper;
 }
 
 const createCard = (cardImg, optionName, description) => {
