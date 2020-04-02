@@ -15,17 +15,18 @@ body {
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 70px !important;
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 200;
-    margin: 75px 0 25px 0;
+    font-weight: 200 !important;
+    margin: 75px 0 25px 0 !important;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 35px !important;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
     font-weight: 500;
+    margin: 30px 0 !important;
 }
 
 #tabs {
@@ -36,7 +37,7 @@ h2 {
 
 li {
     margin: 10px;
-    font-size: 25px;
+    font-size: 22px !important;
 }
 
 li:after { 
@@ -58,11 +59,21 @@ li:hover {
 }
 
 footer {
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
+    margin-top: 30px;
     padding: 15px 10px 10px 10px;
     border-top: rgb(221, 220, 220) 1px solid;
     color: grey;
+}
+
+hr {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, white, rgb(72, 74, 75), rgb(160, 162, 163), rgb(72, 74, 75), white);
 }
 
 /******** HOME PAGE ********/
@@ -91,11 +102,8 @@ img {
     opacity: 0.7;
 }
 
-hr {
-    width: 80%;
-    margin: 10px auto;
-    display: block;
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, white, rgb(72, 74, 75), rgb(160, 162, 163), rgb(72, 74, 75), white);
+/******** MENU PAGE ********/
+
+.class {
+    width: 18rem;
 }

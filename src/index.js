@@ -1,4 +1,6 @@
 import './assets/styles/index.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as Home from "./home";
 import * as Contact from "./contact";
 import * as Menu from "./menu";
@@ -19,6 +21,7 @@ let buttons = [homeLink, menuLink, contactLink]
 homeLink.addEventListener('click', () => {
     Home.removePresentation();
     Contact.removeContactInfo();
+    Menu.removeMenu();
     activateButton(homeLink);
     Home.createPresentation();
 })
@@ -26,6 +29,7 @@ homeLink.addEventListener('click', () => {
 menuLink.addEventListener('click', () => {
     Home.removePresentation();
     Contact.removeContactInfo();
+    Menu.removeMenu();
     activateButton(menuLink);
     Menu.createMenu();
 });
@@ -33,6 +37,7 @@ menuLink.addEventListener('click', () => {
 contactLink.addEventListener('click', () => {
     Home.removePresentation();
     Contact.removeContactInfo();
+    Menu.removeMenu();
     activateButton(contactLink);
     Contact.createContactInfo();
 });
