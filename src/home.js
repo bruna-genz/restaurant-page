@@ -50,7 +50,9 @@ export const createPresentation = () => {
 } 
 
 export const removePresentation = () => {
-    presentationWrapper.remove();
+    if (removePresentation) {
+        presentationWrapper.remove();
+    }
 };
 
 const createImage = () => {

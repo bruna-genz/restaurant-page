@@ -1,28 +1,18 @@
 let contentWrapper;
 let contactInfoWrapper;
 
+import * as Common from './common';
 export const setContentWrapper = _contentWrapper => contentWrapper = _contentWrapper;
 
 export const createContactInfo = () => {
     contactInfoWrapper = document.createElement("div");
 
-    contactInfoWrapper.appendChild(createSeparator());
-    contactInfoWrapper.appendChild(createTitle());
+    contactInfoWrapper.appendChild(Common.createSeparator());
+    contactInfoWrapper.appendChild(Common.createTitle("Make your reservation today!"));
     contactInfoWrapper.appendChild(createImage());
     contactInfoWrapper.appendChild(createDetails());
 
     contentWrapper.appendChild(contactInfoWrapper);
-};
-
-const createSeparator = () => {
-    return document.createElement("hr");  
-}
-
-const createTitle = () => {
-    let title = document.createElement("h2");
-    title.textContent = "Make your reservation today!";
-    
-    return title;
 };
 
 const createImage = () => {
@@ -51,5 +41,7 @@ const createDetails = () => {
 }
 
 export const removeContactInfo = () => {
-    contactInfoWrapper.remove();
+    if (contactInfoWrapper != null) {
+        contactInfoWrapper.remove();
+    }
 }

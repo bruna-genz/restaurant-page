@@ -1,14 +1,13 @@
-// !when click more than one time, it repeats
-
-
 import './assets/styles/index.css';
 import * as Home from "./home";
 import * as Contact from "./contact";
+import * as Menu from "./menu";
 
 Home.setContentWrapper(document.querySelector("#content"));
 
 Home.loadHomePage();
 
+Menu.setContentWrapper(document.querySelector("#content"));
 Contact.setContentWrapper(document.querySelector("#content"));
 
 let homeLink = document.querySelector(".list-0")
@@ -18,19 +17,22 @@ let contactLink = document.querySelector(".list-2")
 let buttons = [homeLink, menuLink, contactLink]
 
 homeLink.addEventListener('click', () => {
-    Home.createPresentation();
+    Home.removePresentation();
     Contact.removeContactInfo();
     activateButton(homeLink);
+    Home.createPresentation();
 })
 
 menuLink.addEventListener('click', () => {
     Home.removePresentation();
     Contact.removeContactInfo();
     activateButton(menuLink);
+    Menu.createMenu();
 });
 
 contactLink.addEventListener('click', () => {
     Home.removePresentation();
+    Contact.removeContactInfo();
     activateButton(contactLink);
     Contact.createContactInfo();
 });
