@@ -19,28 +19,28 @@ let contactLink = document.querySelector(".list-2")
 let buttons = [homeLink, menuLink, contactLink]
 
 homeLink.addEventListener('click', () => {
-    Home.removePresentation();
-    Contact.removeContactInfo();
-    Menu.removeMenu();
+    cleanScreen();
     activateButton(homeLink);
     Home.createPresentation();
 })
 
 menuLink.addEventListener('click', () => {
-    Home.removePresentation();
-    Contact.removeContactInfo();
-    Menu.removeMenu();
+    cleanScreen();
     activateButton(menuLink);
     Menu.createMenu();
 });
 
 contactLink.addEventListener('click', () => {
-    Home.removePresentation();
-    Contact.removeContactInfo();
-    Menu.removeMenu();
+    cleanScreen();
     activateButton(contactLink);
     Contact.createContactInfo();
 });
+
+function cleanScreen() {
+    Home.removePresentation();
+    Contact.removeContactInfo();
+    Menu.removeMenu();
+}
 
 function addActiveClass(el) {
     el.classList.add("active");
