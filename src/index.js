@@ -1,5 +1,7 @@
 import './assets/styles/index.css';
+// eslint-disable-next-line import/no-unresolved
 import 'bootstrap';
+// eslint-disable-next-line import/no-unresolved
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as Home from './home';
 import * as Contact from './contact';
