@@ -14,7 +14,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-        ]
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -25,18 +25,21 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 40
+                quality: 40,
               },
-            }
+            },
           },
-        ]
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           'file-loader',
-        ]
-      }
-    ]
-  }
+        ],
+      },
+    ],
+  },
+  devServer: {
+    contentBase: './dist',
+  },
 };
