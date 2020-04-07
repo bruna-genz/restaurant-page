@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap');    
+
+/******** GENERAL ********/
+
+body {
+    margin: 0;
+}
+
+#content {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 70px !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 200 !important;
+    margin: 75px 0 25px 0 !important;
+}
+
+h2 {
+    font-size: 35px !important;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-weight: 500;
+    margin: 30px 0 !important;
+}
+
+#tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px;
+    font-size: 22px !important;
+}
+
+li:after { 
+    content: " \00b7"; 
+    margin-left: 10px;
+}
+
+li:last-child:after { 
+    content: none; 
+}
+
+li:hover {
+    color: grey; 
+    cursor: pointer;
+}
+
+.active {
+    color: grey;
+}
+
+footer {
+    display: flex !important;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 15px 10px 10px 10px;
+    border-top: rgb(221, 220, 220) 1px solid;
+    color: grey;
+}
+
+hr {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    border: none !important;
+    height: 1px !important;
+    background: linear-gradient(to right, white, rgb(72, 74, 75), rgb(160, 162, 163), rgb(72, 74, 75), white) !important;
+}
+
+/******** HOME PAGE ********/
+
+img {
+    width: 100%;
+    opacity: 0.7;
+}
+
+#description {
+    text-align: center;
+    margin: 40px 0;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+/******** CONTACT PAGE ********/
+
+#contact-image {
+    background-image: url(../images/restaurant2.jpg);
+    width: 698px;
+    height: 257px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+}
+
+/******** MENU PAGE ********/
+
+.class {
+    width: 18rem;
+}
+
+#options-container {
+    display: flex;
+    justify-content: space-between;
+    width: 60em;
+}
+
+.card {
+    width: 33%;
+}
