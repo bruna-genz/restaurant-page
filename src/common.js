@@ -6,3 +6,9 @@ export const createTitle = (text) => {
 
   return title;
 };
+
+export const createParagraph = (text) => {
+  const p = document.createElement('p');
+  p.textContent = text;
+  return p;
+};

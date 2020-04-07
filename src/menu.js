@@ -89,11 +89,13 @@ const createOptions = (menu) => {
 export const createMenu = () => {
   menuWrapper = document.createElement('div');
 
-  menuWrapper.appendChild(Common.createSeparator());
-  menuWrapper.appendChild(Common.createTitle('Lunch Menu'));
-  menuWrapper.appendChild(createOptions(lunchOptions));
-  menuWrapper.appendChild(Common.createTitle('Dinner Menu'));
-  menuWrapper.appendChild(createOptions(dinnerOptions));
+  menuWrapper.append(
+    Common.createSeparator(),
+    Common.createTitle('Lunch Menu'),
+    createOptions(lunchOptions),
+    Common.createTitle('Dinner Menu'),
+    createOptions(dinnerOptions),
+  );
 
   contentWrapper.appendChild(menuWrapper);
 };

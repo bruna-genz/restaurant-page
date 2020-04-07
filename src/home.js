@@ -1,5 +1,6 @@
 /* eslint-disable no-return-assign */
 import restaurantImage from './assets/images/restaurant.jpg';
+import * as Common from './common';
 
 let contentWrapper;
 let presentationWrapper;
@@ -44,16 +45,12 @@ const createParagraphs = () => {
   const paragraphWrapper = document.createElement('div');
   paragraphWrapper.id = 'description';
 
-  const paragraphList = [];
-  for (let i = 0; i < 2; i += 1) {
-    const p = document.createElement('p');
-    paragraphList.push(p);
-    paragraphWrapper.appendChild(p);
-  }
+  const paragraphs = [
+    'Ea amet sit ad nulla tempor pariatur esse minim nulla culpa qui incididunt nostrud. Lorem dolore cupidatat ut eiusmod. Sint velit exercitation incididunt et esse ad veniam sunt dolore.',
+    'Amet duis mollit non enim Lorem fugiat irure eiusmod nisi voluptate ut ad nisi. Pariatur reprehenderit ullamco et culpa pariatur quis exercitation dolor consequat laboris commodo dolor occaecat. Voluptate dolor voluptate esse dolore sunt labore eiusmod ipsum mollit minim commodo officia. Mollit enim deserunt nisi sit.',
+  ];
 
-  paragraphList[0].textContent = 'Ea amet sit ad nulla tempor pariatur esse minim nulla culpa qui incididunt nostrud. Lorem dolore cupidatat ut eiusmod. Sint velit exercitation incididunt et esse ad veniam sunt dolore.';
-  paragraphList[1].textContent = 'Amet duis mollit non enim Lorem fugiat irure eiusmod nisi voluptate ut ad nisi. Pariatur reprehenderit ullamco et culpa pariatur quis exercitation dolor consequat laboris commodo dolor occaecat. Voluptate dolor voluptate esse dolore sunt labore eiusmod ipsum mollit minim commodo officia. Mollit enim deserunt nisi sit.';
-
+  paragraphWrapper.append(...paragraphs.map(Common.createParagraph));
   return paragraphWrapper;
 };
 
@@ -73,8 +70,10 @@ export const createPresentation = () => {
   presentationWrapper = document.createElement('div');
   presentationWrapper.id = 'presentation';
 
-  presentationWrapper.appendChild(createImage());
-  presentationWrapper.appendChild(createParagraphs());
+  presentationWrapper.append(
+    createImage(),
+    createParagraphs(),
+  );
 
   contentWrapper.appendChild(presentationWrapper);
 };

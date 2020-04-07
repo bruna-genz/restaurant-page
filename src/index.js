@@ -1,7 +1,7 @@
 import './assets/styles/index.css';
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-extraneous-dependencies
 import 'bootstrap';
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-extraneous-dependencies
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as Home from './home';
 import * as Contact from './contact';
@@ -44,20 +44,19 @@ function activateButton(button) {
   });
 }
 
-homeLink.addEventListener('click', () => {
-  cleanScreen();
-  activateButton(homeLink);
-  Home.createPresentation();
-});
+document.querySelector('#tabs').addEventListener('click', (e) => {
+  if (!e.target.matches('li')) {
+    return;
+  }
 
-menuLink.addEventListener('click', () => {
   cleanScreen();
-  activateButton(menuLink);
-  Menu.createMenu();
-});
+  activateButton(e.target);
 
-contactLink.addEventListener('click', () => {
-  cleanScreen();
-  activateButton(contactLink);
-  Contact.createContactInfo();
+  const menuOptions = {
+    Home: Home.createPresentation,
+    Menu: Menu.createMenu,
+    Contact: Contact.createContactInfo,
+  };
+
+  menuOptions[e.target.textContent](); // Maybe using some data attributes on the li elements could make this more easy/reliable: https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 });
