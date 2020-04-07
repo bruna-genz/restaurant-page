@@ -1,6 +1,6 @@
 # Restaurante Page
 
-This project is a Restaurant Page, where the contenct is dinamically render. The goal of this project was to modularize my code and set up a javascript application made of different modules using webpack.
+This project is a Restaurant Page, where the content is dinamically render. The goal of this project was to modularize my code and set up a javascript application made of different modules using webpack.
 
 ## Built With
 
