@@ -12,7 +12,7 @@ This project is a Restaurant Page, where the contenct is dinamically render. The
 
 ## Live Demo
 
-[Live Demo Link](#)
+[Live Demo Link](https://rawcdn.githack.com/bruna-genz/restaurant-page/c1bb64a31b0ef1b3cd526cdb5763871593bcc67d/dist/index.html)
 
 ## Getting Started
 
